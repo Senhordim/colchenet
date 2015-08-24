@@ -4,11 +4,36 @@
   <title>Colchenet</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<header class="header">
+		<div class="content">
+			<h1><%= link_to 'Colcho.net', root_path %> </h1>
+			<nav>
+				<ul>
+					<li><%= link_to 'Quartos', rooms_path %></li>
+					<li><%= link_to 'Cadastro', new_user_path %></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="content">
+
+		<% if notice.present? %>
+			<p id="notice"><%= notice %></p>
+		<% end %>
+
+		<% if alert.present? %>
+			<p id="alert"><%= alert %></p>
+		<% end %>
+
+		<%= yield %>
+
+	</div>
 
 </body>
 </html>
