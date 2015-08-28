@@ -1,7 +1,7 @@
 class Room < ActiveRecord::Base
 
 	def complete_name
-		"#{title}", "#{location}"
+		"#{title}, #{location}"
 	end
 	
 end
