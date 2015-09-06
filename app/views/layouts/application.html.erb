@@ -4,7 +4,7 @@
   <title>Colchenet</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -14,8 +14,8 @@
 			<h1><%= link_to 'Colcho.net', root_path %> </h1>
 			<nav>
 				<ul>
-					<li><%= link_to 'Quartos', rooms_path %></li>
-					<li><%= link_to 'Cadastro', new_user_path %></li>
+					<li><%= link_to t('layout.rooms'), rooms_path %></li>
+					<li><%= link_to t('layout.signup'), new_user_path %></li>
 				</ul>
 			</nav>
 		</div>
