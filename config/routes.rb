@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  
-  resources :rooms
-  resources :users
+
+	scope ":locale", locale: /en|pt\-BR/ do	
+		resources :rooms
+		resources :users
+	end
 
   root 'home#index'
 
