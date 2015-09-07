@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-
-	scope ":locale", locale: /en|pt\-BR/ do	
+	
+	# Define locale via url "/pt/users/new"
+	scope "(:locale)", locale: /en|pt/ do	
 		resources :rooms
 		resources :users
 	end
-
+	
+	# Carrega home com locale
+	get '/:locale' => 'home#index', locale: /en|pt/
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
